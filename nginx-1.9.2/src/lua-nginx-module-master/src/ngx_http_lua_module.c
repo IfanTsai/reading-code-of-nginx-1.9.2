@@ -5,59 +5,59 @@
  */
 
 /*
-ÈçºÎ°²×°nginx_lua_moduleÄ£¿é
-2012-03-27 15:01 by ÐùÂöÈÐ, 19397 ÔÄ¶Á, 0 ÆÀÂÛ, ÊÕ²Ø, ±à¼­
+å¦‚ä½•å®‰è£…nginx_lua_moduleæ¨¡å—
+2012-03-27 15:01 by è½©è„‰åˆƒ, 19397 é˜…è¯», 0 è¯„è®º, æ”¶è—, ç¼–è¾‘
 
 
-ÕªÒª:
+æ‘˜è¦:
 
-±¾ÎÄ¼ÇÂ¼ÈçºÎ°²×°ngx_luaÄ£¿é
+æœ¬æ–‡è®°å½•å¦‚ä½•å®‰è£…ngx_luaæ¨¡å—
 
-nginx_lua_moduleÊÇÓÉÌÔ±¦µÄ¹¤³ÌÊ¦ÇåÎÞ£¨ÍõÏþÕÜ£©ºÍ´ºÀ´£¨ÕÂÒà´º£©Ëù¿ª·¢µÄnginxµÚÈý·½Ä£¿é,ËüÄÜ½«luaÓïÑÔÇ¶Èëµ½nginxÅäÖÃÖÐ,´Ó¶øÊ¹ÓÃlua¾Í¼«´óÔöÇ¿ÁËnginxµÄÄÜÁ¦
+nginx_lua_moduleæ˜¯ç”±æ·˜å®çš„å·¥ç¨‹å¸ˆæ¸…æ— ï¼ˆçŽ‹æ™“å“²ï¼‰å’Œæ˜¥æ¥ï¼ˆç« äº¦æ˜¥ï¼‰æ‰€å¼€å‘çš„nginxç¬¬ä¸‰æ–¹æ¨¡å—,å®ƒèƒ½å°†luaè¯­è¨€åµŒå…¥åˆ°nginxé…ç½®ä¸­,ä»Žè€Œä½¿ç”¨luaå°±æžå¤§å¢žå¼ºäº†nginxçš„èƒ½åŠ›
 http://wiki.nginx.org/HttpLuaModule
 
-ÕýÎÄ:
+æ­£æ–‡:
 
-1 ÏÂÔØluajit 2.0²¢°²×°
+1 ä¸‹è½½luajit 2.0å¹¶å®‰è£…
 
 http://luajit.org/download.html
 
-ÎÒÊÇÖ±½ÓÊ¹ÓÃÔ´Âëmake && make install
+æˆ‘æ˜¯ç›´æŽ¥ä½¿ç”¨æºç make && make install
 
-ËùÒÔlibºÍincludeÊÇÖ±½Ó·ÅÔÚ/usr/local/libºÍusr/local/include
-
- 
-
-2 ÏÂÔØnginxÔ´Âë£¬½âÑ¹
-
-×¢Òâ°æ±¾ºÅ£¬Èç¹û»ú×ÓÉÏÒÑ¾­×°ÁËnginx£¬²»ÏëÉý¼¶µÄ»°£¬ÇëÊ¹ÓÃ/to/nginx/sbin/nginx ¨Cv
-
-À´²é¿´°æ±¾ºÅ
+æ‰€ä»¥libå’Œincludeæ˜¯ç›´æŽ¥æ”¾åœ¨/usr/local/libå’Œusr/local/include
 
  
 
-3  ÏÂÔØngx_devel_kit HERE ½âÑ¹
+2 ä¸‹è½½nginxæºç ï¼Œè§£åŽ‹
 
-4  ÏÂÔØnginx_lua_module HERE ½âÑ¹
+æ³¨æ„ç‰ˆæœ¬å·ï¼Œå¦‚æžœæœºå­ä¸Šå·²ç»è£…äº†nginxï¼Œä¸æƒ³å‡çº§çš„è¯ï¼Œè¯·ä½¿ç”¨/to/nginx/sbin/nginx â€“v
+
+æ¥æŸ¥çœ‹ç‰ˆæœ¬å·
 
  
 
-5 ½øÈënginxÔ´ÂëÎÄ¼þ¼Ð
+3  ä¸‹è½½ngx_devel_kit HERE è§£åŽ‹
+
+4  ä¸‹è½½nginx_lua_module HERE è§£åŽ‹
+
+ 
+
+5 è¿›å…¥nginxæºç æ–‡ä»¶å¤¹
 
 cd nginx-1.0.11/
 
  
 
-6 µ¼Èë»·¾³±äÁ¿£¬±àÒë
+6 å¯¼å…¥çŽ¯å¢ƒå˜é‡ï¼Œç¼–è¯‘
 
-export LUAJIT_LIB=/usr/local/lib    #Õâ¸öºÜÓÐ¿ÉÄÜ²»Ò»Ñù 
-export LUAJIT_INC=/usr/local/include/luajit-2.0  #Õâ¸öºÜÓÐ¿ÉÄÜ²»Ò»Ñù
+export LUAJIT_LIB=/usr/local/lib    #è¿™ä¸ªå¾ˆæœ‰å¯èƒ½ä¸ä¸€æ · 
+export LUAJIT_INC=/usr/local/include/luajit-2.0  #è¿™ä¸ªå¾ˆæœ‰å¯èƒ½ä¸ä¸€æ ·
 
  
 
-./configure --prefix=/opt/nginx \    #nginxµÄ°²×°Â·¾¶ 
---add-module=/path/to/ngx_devel_kit \   #ngx_devel_kit µÄÔ´ÂëÂ·¾¶ 
---add-module=/path/to/lua-nginx-module  #nginx_lua_module µÄÔ´ÂëÂ·¾¶
+./configure --prefix=/opt/nginx \    #nginxçš„å®‰è£…è·¯å¾„ 
+--add-module=/path/to/ngx_devel_kit \   #ngx_devel_kit çš„æºç è·¯å¾„ 
+--add-module=/path/to/lua-nginx-module  #nginx_lua_module çš„æºç è·¯å¾„
 
  
 
@@ -66,9 +66,9 @@ make install
 
  
 
-7 ²âÊÔÊÇ·ñ³É¹¦£º
+7 æµ‹è¯•æ˜¯å¦æˆåŠŸï¼š
 
-nginxconfigÖÐ¼ÓÈë
+nginxconfigä¸­åŠ å…¥
 
  
 
@@ -79,35 +79,35 @@ location /hello {
 
  
 
-Ê¹ÓÃ/to/nginx/sbin/nginx ¨Ct ¼ì²énginxÅäÖÃ£¬´ËÊ±Ó¦¸ÃÃ»ÓÐ±¨´í
+ä½¿ç”¨/to/nginx/sbin/nginx â€“t æ£€æŸ¥nginxé…ç½®ï¼Œæ­¤æ—¶åº”è¯¥æ²¡æœ‰æŠ¥é”™
 
  
 
-8 /to/nginx/sbin/nginx   #Æô¶¯nginx
+8 /to/nginx/sbin/nginx   #å¯åŠ¨nginx
 
-»òÕß/to/nginx/sbin/nginx ¨Cs reload #ÖØÆônginx
-
- 
+æˆ–è€…/to/nginx/sbin/nginx â€“s reload #é‡å¯nginx
 
  
 
-·ÃÎÊ192.168.100.1/hello
+ 
 
-»á³öÏÖ¡°hello,lua¡±
+è®¿é—®192.168.100.1/hello
+
+ä¼šå‡ºçŽ°â€œhello,luaâ€
 
  
 
-°²×°³É¹¦!
+å®‰è£…æˆåŠŸ!
 
  
 
 ----------------------
 
-×÷Õß£ºyjf512£¨ÐùÂöÈÐ£©
+ä½œè€…ï¼šyjf512ï¼ˆè½©è„‰åˆƒï¼‰
 
-³ö´¦£ºhttp://www.cnblogs.com/yjf512/
+å‡ºå¤„ï¼šhttp://www.cnblogs.com/yjf512/
 
-±¾ÎÄ°æÈ¨¹éyjf512ºÍcnBlog¹²ÓÐ£¬»¶Ó­×ªÔØ£¬µ«Î´¾­×÷ÕßÍ¬Òâ±ØÐë±£Áô´Ë¶ÎÉùÃ÷
+æœ¬æ–‡ç‰ˆæƒå½’yjf512å’ŒcnBlogå…±æœ‰ï¼Œæ¬¢è¿Žè½¬è½½ï¼Œä½†æœªç»ä½œè€…åŒæ„å¿…é¡»ä¿ç•™æ­¤æ®µå£°æ˜Ž
 
 */
 
